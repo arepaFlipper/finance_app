@@ -15,7 +15,11 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
+    /* No need to import react */
     "jsx": "react-jsx",
+    "types": [
+      "vite/client"
+    ],
     /* Linting */
     "strict": true,
     "noUnusedLocals": false,
@@ -23,11 +27,21 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": [
-    "src"
+    "src/**/*.ts",
+    "src/**/*.tsx"
   ],
+  "baseUrl": "./src",
+  "paths": {
+    "@/*": [
+      "./src/*"
+    ]
+  },
   "references": [
     {
       "path": "./tsconfig.node.json"
     }
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }
