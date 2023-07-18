@@ -1,6 +1,11 @@
 {
   "compilerOptions": {
     "target": "ES2020",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
     "useDefineForClassFields": true,
     "lib": [
       "ES2020",
@@ -31,11 +36,6 @@
     "src/**/*.tsx"
   ],
   "baseUrl": "./src",
-  "paths": {
-    "@/*": [
-      "./src/*"
-    ]
-  },
   "references": [
     {
       "path": "./tsconfig.node.json"

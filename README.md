@@ -15,4 +15,4 @@ The purpose of this repository is to apply the following libraries and framework
 
 `npm i react-redux @reduxjs/toolkit react-router-dom @mui/material @emotion/react @emotion/styled @mui/icons-material @mui/x-data-grid`
 
-`npm i -D @types/react-dom eslint eslint-config-react-app`
+`npm i -D @types/react-dom eslint eslint-config-react-app @types/node`
