@@ -20,3 +20,7 @@ The purpose of this repository is to apply the following libraries and framework
 `npm i express body-parser cors dotenv helmet morgan mongoose mongoose-currency`
 
 `npm i -D nodemon`
+
+`cd ./server && docker-compose up`
+
+`docker exec -it fin_mongo mongosh mongo://127.0.0.1:27017/fintech`

@@ -1,0 +1,23 @@
+version: '3.9'
+services:
+  mongo:
+    container_name: fin_mongo
+    hostname: mongodb
+    restart: always
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootpassword
+    networks:
+      - mongo-network
+    command: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "dbrs"]
+    ports:
+      - 27017-27023:27017-27023
+    volumes:
+      - mongodb_data_container:/data/db
+
+volumes:
+  mongodb_data_container:
+networks:
+  mongo-network:
+    driver: bridge
