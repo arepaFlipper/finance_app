@@ -1,7 +1,9 @@
+import { useGetkpisQuery } from '@/state/api';
 import DashboardBox from './DashboardBox';
 type Props = {}
 
 const Row1 = ({ }: Props) => {
+  const { data } = useGetkpisQuery();
   return (
     <>
       <DashboardBox gridArea="a"></DashboardBox>
