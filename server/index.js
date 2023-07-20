@@ -16,5 +16,6 @@ app.use(morgan("common"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
+console.log(`🤚%cindex.js:20 - HELLO WORLD`, 'font-weight:bold; background:1504051200;color:#fff;');
 
 // MONGOOSE SETUP
