@@ -23,4 +23,4 @@ The purpose of this repository is to apply the following libraries and framework
 
 `cd ./server && docker-compose up`
 
-`docker exec -it fin_mongo mongosh mongo://127.0.0.1:27017/fintech`
+`docker exec -it fin_mongo mongosh 'mongodb://127.0.0.1:27017/test?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.8.0 --replSet'`

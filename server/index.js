@@ -25,13 +25,14 @@ app.use('/kpis', kpiRoutes);
 
 // MONGOOSE SETUP
 const PORT = process.env.PORT || 9000;
-mongoose.connect(process.env.MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGODB_URL)
   .then(async () => {
     app.listen(PORT, () => console.log(`🙄%cindex.js:27 - Server running on port ${PORT}`, 'font-weight:bold; background:1821573120;color:#fff;'));
-    await mongoose.connection.db.dropDatabase(); //DONT do this on production
+
+    await mongoose.connection.db.dropDatabase();
     KPI.insertMany(kpis);
 
   })
-  .catch((error) => console.log(`🥍 error:\n ${error} did not connect`));
+  .catch((error) => console.log(`🥍 error:\n ${"error"} did not connect`));
 
 

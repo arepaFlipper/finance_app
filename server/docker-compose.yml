@@ -1,16 +1,20 @@
 version: '3.9'
 services:
   mongo:
-    container_name: fin_mongo
+    container_name: mongo_fintech
     hostname: mongodb
     restart: always
-    image: mongo:latest
+    build: .
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: rootpassword
     networks:
       - mongo-network
-    command: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "dbrs"]
+    healthcheck:
+      test: test $$(echo "rs.initiate().ok || rs.status().ok" | mongosh -u root -p rootpassword --quiet) -eq 1
+      interval: 10s
+      start_period: 30s
+    command: [ "/usr/bin/mongod","--port", "27018", "--bind_ip_all"]
     ports:
       - 27017-27023:27017-27023
     volumes:
