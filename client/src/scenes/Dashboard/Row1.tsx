@@ -7,15 +7,10 @@ type Props = {}
 const Row1 = ({ }: Props) => {
   const { data } = useGetkpisQuery();
   const revenueExpenses = useMemo(() => {
-    return (
-      data && data[0].monthlyData.map(({ month, revenue, expenses }) => {
-        return {
-          name: month.substring(0, 3),
-          revenue: revenue,
-          expenses: expenses,
-        }
-      })
-    )
+    const dat0 = data && data[0].monthlyData.map(({ month, revenue, expenses }) => {
+
+    })
+    return dat0;
   }, [data]);
   return (
     <>
