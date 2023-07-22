@@ -3,6 +3,7 @@ import { useGetkpisQuery } from '@/state/api';
 import { useTheme } from '@mui/material';
 import { ResponsiveContainer, AreaChart, Area, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
 import DashboardBox from './DashboardBox';
+import BoxHeader from '@/components/BoxHeader';
 type Props = {}
 
 const Row1 = ({ }: Props) => {
@@ -18,6 +19,7 @@ const Row1 = ({ }: Props) => {
   return (
     <>
       <DashboardBox gridArea="a">
+        <BoxHeader title="Revenue" subtitle="top line represents revenue, bottom line represents expenses" sideText="+4%" />
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart width={500} height={400} data={revenueExpenses} margin={{ top: 15, right: 25, left: -10, bottom: 60 }}>
             <CartesianGrid strokeDasharray="1 9" />
