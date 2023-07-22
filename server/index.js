@@ -29,8 +29,9 @@ mongoose.connect(process.env.MONGODB_URL, { useNewUrlParser: true, useUnifiedTop
   .then(async () => {
     app.listen(PORT, () => console.log(`🙄%cindex.js:27 - Server running on port ${PORT}`, 'font-weight:bold; background:1821573120;color:#fff;'));
 
-    await mongoose.connection.db.dropDatabase();
-    KPI.insertMany(kpis);
+    /* Add data only once */
+    // await mongoose.connection.db.dropDatabase();
+    // KPI.insertMany(kpis);
 
   })
   .catch((error) => console.log(`🥍 error:\n ${error} did not connect`));
