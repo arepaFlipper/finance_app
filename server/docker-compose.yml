@@ -1,27 +1,17 @@
 version: '3.9'
 services:
-  mongo:
-    container_name: mongo_fintech
-    hostname: mongodb
+  express:
+    container_name: fin_express
     restart: always
     build: .
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: rootpassword
-    networks:
-      - mongo-network
-    healthcheck:
-      test: test $$(echo "rs.initiate().ok || rs.status().ok" | mongosh -u root -p rootpassword --quiet) -eq 1
-      interval: 10s
-      start_period: 30s
-    command: [ "/usr/bin/mongod","--port", "27018", "--bind_ip_all"]
     ports:
-      - 27017-27023:27017-27023
+      - "5000:3333"
+    links:
+      - mongo
     volumes:
-      - mongodb_data_container:/data/db
-
-volumes:
-  mongodb_data_container:
-networks:
-  mongo-network:
-    driver: bridge
+      - .:/usr/src/app
+  mongo:
+    container_name: fin_mongo
+    image: mongo
+    ports:
+      - "27017:27017"

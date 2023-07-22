@@ -21,6 +21,39 @@ The purpose of this repository is to apply the following libraries and framework
 
 `npm i -D nodemon`
 
-`cd ./server && docker-compose up`
+`cd ./server && docker-compose build`
+`docker-compose up`
 
-`docker exec -it fin_mongo mongosh 'mongodb://127.0.0.1:27017/test?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.8.0 --replSet'`
+Once docker-compose is initialized, connect to database by running:
+`docker exec -it fin_mongo mongosh "mongodb://mongo/test"`
+
+To show the databases available:
+`test> show dbs;`
+
+To connect to finance database:
+`test> use finance;`
+
+To confirm the current database:
+`finance> db;`
+
+To show the collections in current database:
+`finance> show collections;`
+
+To show the documents in kpis collection:
+`finance> db.kpis.findOne();`
+
+To connect to mongo into finance database directly:
+`docker exec -it fin_mongo mongosh "mongodb://mongo/finance"`
+
+To confirm the current database:
+`finance> db;`
+
+To show the collections in current database:
+`finance> show collections;`
+
+To show the documents in 'kpis' collection:
+`finance> db.kpis.findOne();`
+
+`finance> const dailyData = db.kpis.findOne().dailyData;`
+
+`finance> dailyData.length;`

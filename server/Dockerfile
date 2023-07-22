@@ -1,10 +1,14 @@
-FROM mongo:latest
+FROM node:latest
 
-COPY [".", "/home/mongo"]
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
 
-RUN mkdir -p /home/mongo/data/db01/
-RUN mkdir -p /home/mongo/data/db02/
-RUN mkdir -p /home/mongo/data/db03/
+COPY package*.json ./
 
-RUN chmod +x /home/mongo/rs-init.sh
-CMD /home/mongo/rs-init.sh
+RUN npm install --legacy-peer-deps
+
+COPY . .
+
+EXPOSE 3333
+
+CMD ["npm", "run", "dev"]
