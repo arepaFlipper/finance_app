@@ -24,7 +24,7 @@ app.use(cors());
 app.use('/kpis', kpiRoutes);
 
 // MONGOOSE SETUP
-const PORT = process.env.PORT || 9000;
+const PORT = process.env.PORT || 3333;
 mongoose.connect(process.env.MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(async () => {
     app.listen(PORT, () => console.log(`🙄%cindex.js:27 - Server running on port ${PORT}`, 'font-weight:bold; background:1821573120;color:#fff;'));
