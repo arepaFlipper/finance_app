@@ -10,6 +10,17 @@ export const tokens = {
     800: "#48494e",
     900: "#242427",
   },
+  red: {
+    100: "#fee2e2",
+    200: "#fecaca",
+    300: "#fca5a5",
+    400: "#f87171",
+    500: "#ef4444",
+    600: "#dc2626",
+    700: "#b91c1c",
+    800: "#991b1b",
+    900: "#7f1d1d",
+  },
   primary: {
     // light green
     100: "#d0fcf4",
@@ -58,6 +69,10 @@ export const themeSettings = {
     },
     tertiary: {
       ...tokens.tertiary,
+    },
+    red: {
+      ...tokens.red,
+      main: tokens.red[500],
     },
     grey: {
       ...tokens.grey,
