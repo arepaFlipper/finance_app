@@ -8,6 +8,7 @@ import BoxHeader from '@/components/BoxHeader';
 const Row1 = () => {
   const { palette } = useTheme();
   const { data } = useGetkpisQuery();
+
   const revenueExpenses = useMemo(() => {
     const dat0 = data && data[0].monthlyData.map(({ month, revenue, expenses }) => {
       const name = month.substring(0, 3);
@@ -15,6 +16,7 @@ const Row1 = () => {
     })
     return dat0;
   }, [data]);
+
   const revenueProfit = useMemo(() => {
     const dat0 = data && data[0].monthlyData.map(({ month, revenue, expenses }) => {
       const name = month.substring(0, 3);
@@ -22,6 +24,7 @@ const Row1 = () => {
     })
     return dat0;
   }, [data]);
+
   const revenue = useMemo(() => {
     const dat0 = data && data[0].monthlyData.map(({ month, revenue }) => {
       const name = month.substring(0, 3);
@@ -29,6 +32,7 @@ const Row1 = () => {
     })
     return dat0;
   }, [data]);
+
   return (
     <>
       <DashboardBox gridArea="a">
