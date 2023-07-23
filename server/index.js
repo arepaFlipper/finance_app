@@ -33,9 +33,9 @@ mongoose.connect(process.env.MONGODB_URL, { useNewUrlParser: true, useUnifiedTop
     app.listen(PORT, () => console.log(`🙄%cindex.js:27 - Server running on port ${PORT}`, 'font-weight:bold; background:1821573120;color:#fff;'));
 
     /* Add data only once */
-    // await mongoose.connection.db.dropDatabase();
-    // KPI.insertMany(kpis);
-    // Product.insertMany(products);
+    await mongoose.connection.db.dropDatabase();
+    KPI.insertMany(kpis);
+    Product.insertMany(products);
 
   })
   .catch((error) => console.log(`🥍 error:\n ${error} did not connect`));
