@@ -1,7 +1,7 @@
 import { useGetProductsQuery, useGetkpisQuery } from '@/state/api';
 import DashboardBox from './DashboardBox';
 import BoxHeader from '@/components/BoxHeader';
-import { ResponsiveContainer, AreaChart, Area, CartesianGrid, XAxis, YAxis, Tooltip, Line, Legend, LineChart, BarChart, Bar, PieChart, Cell, Pie, ScatterChart, Scatter, ZAxis } from 'recharts';
+import { ResponsiveContainer, CartesianGrid, XAxis, YAxis, Tooltip, Line, LineChart, PieChart, Cell, Pie, ScatterChart, Scatter, ZAxis } from 'recharts';
 import { Box, Typography, useTheme } from '@mui/material';
 import { useMemo } from 'react';
 import FlexBetween from '@/components/FlexBetween';
@@ -13,7 +13,7 @@ const pieData = [
 
 const Row2 = () => {
   const { data: productData } = useGetProductsQuery();
-  const { data: prodcutExpenseData } = useGetProductsQuery();
+  // const { data: prodcutExpenseData } = useGetProductsQuery();
   const { data: operationalData } = useGetkpisQuery();
   const { palette } = useTheme();
   const pieColors = [palette.primary[800], palette.primary[300]];
@@ -26,7 +26,7 @@ const Row2 = () => {
     return dat0;
   }, [operationalData]);
 
-  const productExpenseData = useMemo(() => {
+  const prodcutExpenseData = useMemo(() => {
     const dat0 = productData && productData.map(({ _id, price, expense }) => {
       return { _id, price, expense };
     })
@@ -53,7 +53,7 @@ const Row2 = () => {
         <FlexBetween mt="0.25rem" gap="1.5rem" pr="1rem">
           <PieChart width={110} height={100} margin={{ top: 0, right: -10, left: 10, bottom: 0 }}>
             <Pie stroke="gray" data={pieData} innerRadius={18} outerRadius={38} paddingAngle={2} dataKey="value">
-              {pieData.map((entry: unknown, index: number) => {
+              {pieData.map((_: unknown, index: number) => {
                 return (
                   <Cell key={`cell-${index}`} fill={pieColors[index]} />
                 )
