@@ -26,13 +26,7 @@ const Row3 = () => {
     { field: "productIds", headerName: "Count", flex: 0.35, renderCell: (params: GridCellParams) => (params.value as string[]).length },
   ]
 
-
-  const pieData = [
-    { name: "Group A", value: 600 },
-    { name: "Group B", value: 400 },
-  ]
-
-  const pieColors = [palette.primary[800], palette.primary[300]];
+  const pieColors = [palette.red[800], palette.primary[800]];
 
   const pieChartData = useMemo(() => {
     if (kpiData) {
@@ -112,7 +106,7 @@ const Row3 = () => {
       </DashboardBox>
       <DashboardBox gridArea="j">
         <BoxHeader title="Overall Summary and Explanation Data" sideText="+4%" />
-        <Box height="15px" margin="1.25rem 1rem 0.4rem 1rem" bgcolor={palette.primary[800]} borderRadius="1rem">
+        <Box height="15px" margin="1.25rem 1rem 0.4rem 1rem" bgcolor={palette.grey[800]} borderRadius="1rem">
           <Box height="15px" bgcolor={palette.primary[600]} borderRadius="1rem" width="77%">
           </Box>
         </Box>
