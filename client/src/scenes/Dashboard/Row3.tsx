@@ -19,7 +19,7 @@ const Row3 = () => {
     { field: "_id", headerName: "id", flex: 1, },
     { field: "buyer", headerName: "Buyer", flex: 0.67 },
     { field: "amount", headerName: "Amount", flex: 0.35, renderCell: (params: GridCellParams) => `$${params.value}` },
-    { field: "productIds", headerName: "Count", flex: 0.35, renderCell: (params: GridCellParams) => params.value.length },
+    { field: "productIds", headerName: "Count", flex: 0.35, renderCell: (params: GridCellParams) => (params.value as string[]).length },
   ]
   return (
     <>
