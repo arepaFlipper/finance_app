@@ -110,7 +110,16 @@ const Row3 = () => {
           })}
         </FlexBetween>
       </DashboardBox>
-      <DashboardBox gridArea="j"></DashboardBox>
+      <DashboardBox gridArea="j">
+        <BoxHeader title="Overall Summary and Explanation Data" sideText="+4%" />
+        <Box height="15px" margin="1.25rem 1rem 0.4rem 1rem" bgcolor={palette.primary[800]} borderRadius="1rem">
+          <Box height="15px" bgcolor={palette.primary[600]} borderRadius="1rem" width="77%">
+          </Box>
+        </Box>
+        <Typography margin="0 1rem" variant="h6">
+          Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident.
+        </Typography>
+      </DashboardBox>
     </>
   )
 }
