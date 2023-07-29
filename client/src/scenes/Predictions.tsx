@@ -45,7 +45,7 @@ const Predictions = () => {
       </FlexBetween>
       <ResponsiveContainer width="100%" height="100%">
         <LineChart data={formattedData} margin={{ top: 20, right: 75, left: 20, bottom: 80 }}>
-          <CartesianGrid strokeDasharray="5 5" vertical={false} stroke={palette.grey[800]} />
+          <CartesianGrid strokeDasharray="5 5" stroke={palette.grey[800]} />
           <XAxis dataKey="name" style={{ fontSize: "10px" }} />
           <Label value="Month" offset={-5} position="insideBottom" />
           <XAxis />
@@ -58,7 +58,7 @@ const Predictions = () => {
           <Line type="monotone" dataKey="Actual Revenue" stroke={palette.primary.main} strokeWidth={0} dot={{ strokeWidth: 5 }} />
           <Line type="monotone" dataKey="Regression Line" stroke={'#8884d8'} />
           {isPredictions && (
-            <Line type="monotone" dataKey="Predicted Revenue" stroke={palette.secondary[500]} />
+            <Line strokeDasharray="5 5" type="monotone" dataKey="Predicted Revenue" stroke={palette.secondary[500]} />
           )}
         </LineChart>
       </ResponsiveContainer>
