@@ -3,8 +3,8 @@ import { useState, useMemo } from "react";
 import DashboardBox from "./Dashboard/DashboardBox";
 import { useGetkpisQuery } from "@/state/api";
 import FlexBetween from "@/components/FlexBetween";
-import { Box, Button, Tooltip, Typography } from "@mui/material";
-import { ResponsiveContainer, CartesianGrid, XAxis, YAxis, Legend, Line, LineChart, Label } from "recharts";
+import { Box, Button, Typography } from "@mui/material";
+import { ResponsiveContainer, CartesianGrid, XAxis, YAxis, Legend, Line, LineChart, Label, Tooltip } from "recharts";
 
 import { DataPoint, linear } from "regression";
 
@@ -52,9 +52,8 @@ const Predictions = () => {
           <YAxis domain={[12_000, 26_000]} axisLine={{ strokeWidth: '0' }} style={{ fontSize: "10px" }} tickFormatter={(val) => `$${val}`} >
             <Label value="Revenue is USD" angle={-90} offset={-5} position="insideLeft" />
           </YAxis >
-          <Tooltip title="Predicted Revenue" >
-            <Legend verticalAlign="top" />
-          </Tooltip>
+          <Tooltip />
+          <Legend verticalAlign="top" />
           <Line type="monotone" dataKey="Actual Revenue" stroke={palette.primary.main} strokeWidth={0} dot={{ strokeWidth: 5 }} />
           <Line type="monotone" dataKey="Regression Line" stroke={'#8884d8'} />
           {isPredictions && (
