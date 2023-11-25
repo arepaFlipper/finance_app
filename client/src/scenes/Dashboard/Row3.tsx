@@ -26,6 +26,7 @@ const Row3 = () => {
     { field: "productIds", headerName: "Count", flex: 0.35, renderCell: (params: GridCellParams) => (params.value as string[]).length },
   ]
 
+  {/* @ts-ignore */ }
   const pieColors = [palette.red[800], palette.primary[800]];
 
   const pieChartData = useMemo(() => {

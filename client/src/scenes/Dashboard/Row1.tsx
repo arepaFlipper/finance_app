@@ -46,7 +46,9 @@ const Row1 = () => {
                 <stop offset="95%" stopColor={palette.primary[300]} stopOpacity={0} />
               </linearGradient>
               <linearGradient id="colorExpenses" x1="0" y1="0" x2="0" y2="1">
+                {/* @ts-ignore */}
                 <stop offset="5%" stopColor={palette.red[300]} stopOpacity={0.9} />
+                {/* @ts-ignore */}
                 <stop offset="95%" stopColor={palette.red[300]} stopOpacity={0} />
               </linearGradient>
             </defs>
@@ -54,6 +56,7 @@ const Row1 = () => {
             <YAxis axisLine={{ strokeWidth: "0" }} style={{ fontSize: "10px" }} domain={[8_000, 23_000]} />
             <Tooltip />
             <Area type="monotone" dataKey="revenue" dot stroke={palette.primary.main} fillOpacity={1} fill="url(#colorRevenue)" />
+            {/* @ts-ignore */}
             <Area type="monotone" dataKey="expenses" dot stroke={palette.red[500]} fillOpacity={1} fill="url(#colorExpenses)" />
           </AreaChart>
         </ResponsiveContainer>

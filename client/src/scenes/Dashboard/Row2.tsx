@@ -16,6 +16,7 @@ const Row2 = () => {
   // const { data: prodcutExpenseData } = useGetProductsQuery();
   const { data: operationalData } = useGetkpisQuery();
   const { palette } = useTheme();
+  {/* @ts-ignore */ }
   const pieColors = [palette.primary[800], palette.red[800]];
 
   const operationalExpenses = useMemo(() => {
