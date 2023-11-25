@@ -27,6 +27,17 @@ The purpose of this repository is to apply the following libraries and framework
 Once docker-compose is initialized, connect to database by running:
 `docker exec -it fin_mongo mongosh "mongodb://mongo/test"`
 
+# To populate the Database:
+Uncomment the following lines of code from `server/src/index.ts`:
+
+```
+    /* Add data only once */
+    // await mongoose.connection.db.dropDatabase();
+    // KPI.insertMany(kpis);
+    // Product.insertMany(products);
+    // Transaction.insertMany(transactions);
+```
+
 To show the databases available:
 `test> show dbs;`
 
