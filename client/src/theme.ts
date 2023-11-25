@@ -56,6 +56,8 @@ export const tokens = {
 };
 
 // mui theme settings
+
+// mui theme settings
 export const themeSettings = {
   palette: {
     primary: {
@@ -69,10 +71,6 @@ export const themeSettings = {
     },
     tertiary: {
       ...tokens.tertiary,
-    },
-    red: {
-      ...tokens.red,
-      main: tokens.red[500],
     },
     grey: {
       ...tokens.grey,
