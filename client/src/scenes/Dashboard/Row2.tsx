@@ -16,8 +16,7 @@ const Row2 = () => {
   // const { data: prodcutExpenseData } = useGetProductsQuery();
   const { data: operationalData } = useGetkpisQuery();
   const { palette } = useTheme();
-  {/* @ts-ignore */ }
-  const pieColors = [palette.primary[800], palette.red[800]];
+  const pieColors = [palette.primary[800], "#991B1B"];
 
   const operationalExpenses = useMemo(() => {
     const dat0 = operationalData && operationalData[0].monthlyData.map(({ month, operationalExpenses, nonOperationalExpenses }) => {
